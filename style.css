@@ -50,7 +50,6 @@ body, input, textarea, button {
 
 .chatContainer div{
     display: flex;
-    align-items: ;
     width: 100%;
     justify-content: flex-end;
 }
