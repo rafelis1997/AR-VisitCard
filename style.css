@@ -56,7 +56,6 @@ body, input, textarea, button {
 }
 
 
-
 #example-scanning-overlay {
     display: flex;
     align-items: center;
@@ -112,8 +111,11 @@ body, input, textarea, button {
         width: 80vw;
         height: 80vw;
     }
-    .chatContainer div {
+    .chatContainer h1 {
         font-size: 1.5rem;
+    }
+    .chatContainer div span {
+        font-size: 0.75rem;
     }
 }
 
