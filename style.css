@@ -1,0 +1,122 @@
+html {
+    width: 100vh;
+    height: 100vh;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body, input, textarea, button {
+    font-family: 'Roboto', sans-serif;
+}
+
+.chatContainer {
+    display:none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: calc(100vw - 1rem);
+    
+    margin: 1rem 0.5rem;
+    padding: 1.5rem;
+    padding-bottom: 0.5rem;
+    
+    position:absolute;
+    top: 0;
+    left: 0;
+
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: hsla(197, 100%, 63%, 0.45);
+
+    background: linear-gradient(0deg, hsla(217, 100%, 50%, 0.65) 0%, hsla(186, 100%, 69%, 0.85) 100%);
+
+    background: -moz-linear-gradient(0deg, hsla(217, 100%, 50%, 0.65) 0%, hsla(186, 100%, 69%, 0.85) 100%);
+
+    background: -webkit-linear-gradient(0deg, hsla(217, 100%, 50%, 0.65) 0%, hsla(186, 100%, 69%, 0.85) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#40C9FF", endColorstr="#E81CFF", GradientType=1 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    color: white;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+    text-align: center;
+    cursor: pointer;
+    z-index: 999999;
+}
+
+.chatContainer div{
+    display: flex;
+    align-items: ;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+#example-scanning-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 2;
+}
+
+#example-scanning-overlay .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(to right, white 10px, transparent 10px) 0 0, linear-gradient(to right, white 10px, transparent 10px) 0 100%, linear-gradient(to left, white 10px, transparent 10px) 100% 0, linear-gradient(to left, white 10px, transparent 10px) 100% 100%, linear-gradient(to bottom, white 10px, transparent 10px) 0 0, linear-gradient(to bottom, white 10px, transparent 10px) 100% 0, linear-gradient(to top, white 10px, transparent 10px) 0 100%, linear-gradient(to top, white 10px, transparent 10px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+}
+
+#example-scanning-overlay img {
+    opacity: 0.6;
+    width: 60%;
+    align-self: center;
+}
+
+@keyframes move {
+    0% { top: 0%;}
+    50% {  top: calc(100% - 10px);}
+    100% { top: 0%;}
+}
+
+#example-scanning-overlay .inner .scanline {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: white;
+    animation: move 2s linear infinite;
+}
+
+@media (min-aspect-ratio: 1 / 1) {
+    #example-scanning-overlay .inner {
+        width: 50vh;
+        height: 50vh;
+    }
+}
+
+@media (max-aspect-ratio: 1 / 1){
+    #example-scanning-overlay .inner {
+        width: 80vw;
+        height: 80vw;
+    }
+}
+   
+
+    
+
+
