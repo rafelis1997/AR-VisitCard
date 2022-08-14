@@ -4,10 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const chatContainer = document.querySelector('.chatContainer');
     const chatTexContainer = document.querySelector('.chatTextContainer');
     const tapText = document.querySelector('.tap');
-    
+    const overlay = document.querySelector('#example-scanning-overlay');
+    const orientation = document.querySelector('.orientation');
+    const orientationButton = document.querySelector('.orientationButton');
+
     // detect target found
 	target.addEventListener("targetFound", event => {
         chatContainer.setAttribute('style', 'display: flex')
+    });
+    target.addEventListener("targetLost", event => {
+        overlay.setAttribute('class', '')
     });
     
     let locatedChatText;
@@ -49,29 +55,51 @@ document.addEventListener("DOMContentLoaded", function() {
                 chatTexContainer.innerHTML = locatedChatText.thirdLine;
                 tapText.innerHTML = '';
                 chatContainer.removeEventListener('click', arguments.callee)
-                chatContainer.setAttribute('style', 'cursor:default')
+                chatContainer.setAttribute('style', 'display: flex; cursor:default')
         }
-
     })
     
-    for(let i=1; i< target.children.length; i++) {
-        const el = target.children[i];
+    for(let i=1; i< orientation.children.length; i++) {
+        const el = orientation.children[i];
         const btn = el.getAttribute('id');
         let link;
+        console.log(btn);
 
-        switch(btn) {
-            case 'insta':
-                link = 'https://www.instagram.com/rafheros'
-            case 'linkedin':
-                link = 'https://www.linkedin.com/in/rafael-heros-almeida/'
-            case 'portfolio':
-                link = 'https://rafael-almeida.vercel.app'
-            default: 'error'
+        // switch(btn) {
+        //     case 'insta':
+        //         link = 'https://www.instagram.com/rafheros'
+        //     case 'linkedin':
+        //         link = 'https://www.linkedin.com/in/rafael-heros-almeida/'
+        //     case 'portfolio':
+        //         link = 'https://rafael-almeida.vercel.app'
+        //     default: 'error'
+        // }
+        if(btn === 'insta') {
+            link = 'https://www.instagram.com/rafheros';
+            console.log('click')
+        } else if (btn === 'linkedin') {
+            link = 'https://www.linkedin.com/in/rafael-heros-almeida/'
+            console.log('click')
+        } else {
+            link = 'https://rafael-almeida.vercel.app'
+            console.log('click')
         }
+
 
 
         el.addEventListener('click', () => {
             window.open(link, '_blank');
         })
     }
+
+    orientationButton.addEventListener('click', () => {
+        const rotation= orientation.getAttribute('rotation') ;
+        console.log(rotation);
+
+        if( rotation.x === 90)
+            orientation.setAttribute('rotation', {x:0, y:0, z:0});
+
+        if( rotation.x === 0)
+            orientation.setAttribute('rotation', {x:90, y:0, z:0});
+    });
 });

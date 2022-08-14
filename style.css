@@ -39,6 +39,7 @@ body, input, textarea, button {
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 0;
 
     color: white;
     text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
@@ -113,7 +114,36 @@ body, input, textarea, button {
 
 #example-scanning-overlay.hidden {
     display: none;
-  }
+}
+
+.orientationButton {
+    position:absolute;
+    left:1rem;
+    bottom:1rem;
+    padding:0.75rem 1.5rem;
+
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    background: hsla(197, 100%, 63%, 0.45);
+
+    background: linear-gradient(0deg, hsla(217, 100%, 50%, 0.65) 0%, hsla(186, 100%, 69%, 0.85) 100%);
+
+    background: -moz-linear-gradient(0deg, hsla(217, 100%, 50%, 0.65) 0%, hsla(186, 100%, 69%, 0.85) 100%);
+
+    background: -webkit-linear-gradient(0deg, hsla(217, 100%, 50%, 0.65) 0%, hsla(186, 100%, 69%, 0.85) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#40C9FF", endColorstr="#E81CFF", GradientType=1 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    /* border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+    border:0;
+    color: white;
+    text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+    text-align: center;
+    cursor: pointer;
+
+    z-index:1000;
+}
    
 
     
