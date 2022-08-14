@@ -115,6 +115,10 @@ body, input, textarea, button {
         height: 80vw;
     }
 }
+
+#example-scanning-overlay.hidden {
+    display: none;
+  }
    
 
     
